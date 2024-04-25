@@ -209,9 +209,11 @@ ol {
     url('../images/background/people-office.jpg');
   background-color: var(--dark-color);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: 50% 50%;
   padding: 188px 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .main-header {
@@ -497,13 +499,14 @@ ol {
   border-top: none;
 }
 
-.portfolio-photo-item:hover {
+.portfolio-photo-item:hover,
+.portfolio-photo-item:focus {
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 8%),
     0px 1px 1px 0px rgba(0, 0, 0, 16%), 0px 2px 1px 0px rgba(0, 0, 0, 8%);
 }
 
 .portfolio-photo-item:hover .overlay,
-.portfolio-photo-item:focus .overlay {
+.portfolio-photo-item:focus-within .overlay {
   transform: translateY(0);
 }
 
@@ -607,9 +610,17 @@ ol {
   top: 24px;
   right: 24px;
 }
+
 .modal-btn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--dark-color);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--presses-state-color);
+  cursor: pointer;
+  fill: rgba(255, 255, 255, 100%);
 }
